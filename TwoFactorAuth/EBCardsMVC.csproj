@@ -247,6 +247,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\ebcards %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\ebcards.pubxml" />
+    <None Include="Properties\PublishProfiles\ebcardsalpha.pubxml" />
     <None Include="Properties\PublishProfiles\ebcardsbeta.pubxml" />
     <None Include="Properties\PublishProfiles\TwoFactorAuth2221.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
