@@ -59,8 +59,6 @@ namespace EBCardsMVC
                consumerKey: ConfigurationManager.AppSettings["twitterconsumerKey"],
                consumerSecret: ConfigurationManager.AppSettings["twitterconsumerSecret"]);
 
-
-
             app.UseFacebookAuthentication(
                appId: ConfigurationManager.AppSettings["facebookAppId"],
                appSecret: ConfigurationManager.AppSettings["facebookSecret"]);
