@@ -302,11 +302,11 @@
     <Content Include="Views\EBCards\Delete.cshtml" />
     <Content Include="Views\EBCards\Details.cshtml" />
     <Content Include="Views\EBCards\Index.cshtml" />
-    <Content Include="Views\Persona\Create.cshtml" />
-    <Content Include="Views\Persona\Delete.cshtml" />
-    <Content Include="Views\Persona\Details.cshtml" />
-    <Content Include="Views\Persona\Edit.cshtml" />
-    <Content Include="Views\Persona\Index.cshtml" />
+    <Content Include="Views\Personas\Create.cshtml" />
+    <Content Include="Views\Personas\Delete.cshtml" />
+    <Content Include="Views\Personas\Details.cshtml" />
+    <Content Include="Views\Personas\Edit.cshtml" />
+    <Content Include="Views\Personas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

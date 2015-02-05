@@ -12,11 +12,9 @@ using PagedList;
 
 namespace EBCardsMVC.Controllers
 {
+    [Authorize]
     public class EBCardsController : Controller
     {
-        [Authorize]
-        public class BusinessCardsController : Controller
-        {
             private ApplicationDbContext db = new ApplicationDbContext();
 
             // GET: BusinessCards
@@ -181,6 +179,5 @@ namespace EBCardsMVC.Controllers
                 }
                 base.Dispose(disposing);
             }
-        }
     }
 }
