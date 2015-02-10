@@ -3,19 +3,54 @@
 
 <h4>Use another service to log in.</h4>
 <hr />
+
+
+
+
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
-    if (loginProviders.Count() > 0) 
+    if (loginProviders.Count() > 0)
     {
-        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl }))
+        {
             @Html.AntiForgeryToken()
             <div id="socialLoginList">
-                <p>
-                    @foreach (AuthenticationDescription p in loginProviders)
+                @foreach (AuthenticationDescription p in loginProviders)
+                {
+                    switch (p.AuthenticationType.ToString())
                     {
-                        <button type="submit" class="btn btn-info center-block" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                        case "Google":
+                            <button class="btn btn-lg btn-social-icon btn-google-plus" type="submit" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">
+                                <i class="fa fa-google-plus"></i>
+                            </button>
+                            break;
+                        case "Facebook":
+                        <button class="btn btn-lg btn-social-icon btn-facebook" type="submit" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">
+                            <i class="fa fa-facebook"></i>
+                        </button>
+                            break;
+                        case "Twitter":
+                            <button class="btn btn-lg btn-social-icon btn-twitter" type="submit" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">
+                                <i class="fa fa-twitter"></i>
+                            </button>
+                        break;
+                        case "Microsoft":
+                            <button class="btn btn-lg btn-social-icon btn-microsoft" type="submit" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">
+                                <i class="fa fa-windows"></i>
+                            </button>
+                        break;
+                        case "LinkedIn":
+                            <button class="btn btn-lg btn-social-icon btn-linkedin" type="submit" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">
+                                <i class="fa fa-linkedin"></i>
+                            </button>
+                        break;
                     }
-                </p>
+
+                    @*<button type="submit" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>*@
+                }
+
+
+
             </div>
         }
     }

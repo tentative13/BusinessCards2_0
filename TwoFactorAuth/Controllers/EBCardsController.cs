@@ -9,6 +9,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 
 namespace EBCardsMVC.Controllers
 {
@@ -46,7 +49,7 @@ namespace EBCardsMVC.Controllers
                 int pageSize = 3;
                 int pageNumber = (page ?? 1);
 
-                //return View(personas.ToList());
+                var userId = User.Identity.GetUserId();
 
                 return View(businesscards.ToPagedList(pageNumber, pageSize));
 

@@ -25,6 +25,8 @@ namespace EBCardsMVC
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
+                      "~/Content/bootstrap-social.css",
+                      "~/Content/font-awesome.css",
                       "~/Content/site.css"));
         }
     }
