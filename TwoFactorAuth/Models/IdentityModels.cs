@@ -3,7 +3,6 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Domain;
 
 namespace EBCardsMVC.Models
 {
@@ -30,11 +29,12 @@ namespace EBCardsMVC.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Persona> Personas { get; set; }
-        public DbSet<BusinessCard> BusinessCards { get; set; }
-        public DbSet<Contact> Contacts { get; set; }
-        public DbSet<SocialAccounts> SocialAccounts { get; set; }
-        public DbSet<Group> Groups { get; set; }
-        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Domain.Persona> Personas { get; set; }
+        public DbSet<Domain.BusinessCard> BusinessCards { get; set; }
+        public DbSet<Domain.Contact> Contacts { get; set; }
+        public DbSet<Domain.SocialAccounts> SocialAccounts { get; set; }
+        public DbSet<Domain.Group> Groups { get; set; }
+        public DbSet<Domain.Address> Addresses { get; set; }
+        
     }
 }

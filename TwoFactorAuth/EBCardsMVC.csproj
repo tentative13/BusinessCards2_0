@@ -224,10 +224,20 @@
     <Compile Include="Migrations\201501101437073_Update1.Designer.cs">
       <DependentUpon>201501101437073_Update1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502101658007_AddPersonaUser.cs" />
+    <Compile Include="Migrations\201502101658007_AddPersonaUser.Designer.cs">
+      <DependentUpon>201502101658007_AddPersonaUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Domain\Address.cs" />
+    <Compile Include="Models\Domain\BusinessCard.cs" />
+    <Compile Include="Models\Domain\Contact.cs" />
+    <Compile Include="Models\Domain\Group.cs" />
+    <Compile Include="Models\Domain\PersonaSocialAccounts.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Domain\Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -254,11 +264,13 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\ebcards %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\ebcards %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\ebcards.pubxml" />
     <None Include="Properties\PublishProfiles\ebcardsalpha.pubxml" />
     <None Include="Properties\PublishProfiles\ebcardsbeta.pubxml" />
     <None Include="Properties\PublishProfiles\TwoFactorAuth2221.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap_mvc_validation.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -330,12 +342,9 @@
     <EmbeddedResource Include="Migrations\201501101437073_Update1.resx">
       <DependentUpon>201501101437073_Update1.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{93a48c85-ca0c-44e6-9ebe-867bc627748f}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Migrations\201502101658007_AddPersonaUser.resx">
+      <DependentUpon>201502101658007_AddPersonaUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
