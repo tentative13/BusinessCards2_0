@@ -31,7 +31,8 @@ namespace Domain
 
 
         public virtual ICollection<Address> Address { get; set; }
-        public virtual Persona Persona { get; set; }
+        public virtual Persona PersonaOwner { get; set; }
+        public virtual Persona ShareWith { get; set; }
     }
 }
 

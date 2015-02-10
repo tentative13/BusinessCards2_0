@@ -22,13 +22,3 @@ select,
 textarea {
     max-width: 280px;
 }
-.validation-summary-errors
-{
-    .alert();
-    .alert-error();
-}
-.field-validation-error 
-{
-    .label();
-    .label-important();
-}
