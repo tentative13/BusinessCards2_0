@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace EBCardsMVC.Models.Domain
 {
     public class Contact
     {
