@@ -236,6 +236,10 @@
     <Compile Include="Migrations\201502111720573_BCPersonasMigration.Designer.cs">
       <DependentUpon>201502111720573_BCPersonasMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502141454466_BCto.cs" />
+    <Compile Include="Migrations\201502141454466_BCto.Designer.cs">
+      <DependentUpon>201502141454466_BCto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Domain\Address.cs" />
@@ -360,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502111720573_BCPersonasMigration.resx">
       <DependentUpon>201502111720573_BCPersonasMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502141454466_BCto.resx">
+      <DependentUpon>201502141454466_BCto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
