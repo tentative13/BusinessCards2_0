@@ -7,59 +7,75 @@
 @{
     ViewBag.Title = "Business Cards";
 }
-<div class="page-header">
-    <h2>Business Cards</h2>
-</div>
-
 <div class="row">
-    <div class="col-md-5">
-        @using (Html.BeginForm("Index", "EBCards", FormMethod.Get))
-        {
-            <div class="input-group">
-                <span class="input-group-addon">Find by name: </span>
-                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
-                <span class="input-group-btn">
-                    <input class="btn btn-default" type="submit" value="Search" />
-                </span>
-            </div>
-        } 
-    </div>
-    <div class="col-md-1 col-md-offset-5">
-        @Html.ActionLink("Create New", "Create", "EBCards", null, new { @class = "btn btn-primary" })
+    <div class="page-header">
+        <h2>Business Cards</h2>
     </div>
 </div>
 
 
-<div class="bs-docs-section">
-    <table class="table table-striped table-hover ">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().CompanyName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().Position)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().CompanyLogo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().WebSite)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().BusinessDemo)
-            </th>
-            <th></th>
-        </tr>
+    <div class="row">
+        <div class="col-md-5">
+            @using (Html.BeginForm("Index", "EBCards", FormMethod.Get))
+        {
+        <div class="input-group">
+            <span class="input-group-addon">Find by name: </span>
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+            <span class="input-group-btn">
+                <input class="btn btn-default" type="submit" value="Search" />
+            </span>
+        </div>
+        }
+        </div>
+    </div>
+    <div class="row"><br /></div>
+    <div class="row">
 
-        @foreach (var item in Model)
+        <div class="bs-docs-section">
+            <table class="table table-striped table-hover ">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().Persona.FirstName)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().Persona.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().CompanyLogo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().CompanyName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().Position)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().Phone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().WebSite)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().BusinessDemo)
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyLogo)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CompanyName)
                 </td>
@@ -73,26 +89,22 @@
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CompanyLogo)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.WebSite)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.BusinessDemo)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
+
             </tr>
         }
 
-    </table>
-</div>
-<br />
+            </table>
+        </div>
+    </div>
+    <br />
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
     @Html.PagedListPager(Model, page => Url.Action("Index",
     new { page, currentFilter = ViewBag.CurrentFilter }))
+
+@Html.ActionLink("Back to profile", "Details", "Personas", null, null)

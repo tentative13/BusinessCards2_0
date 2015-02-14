@@ -6,7 +6,7 @@
         @Html.AntiForgeryToken()
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
-                <li class="dropdown open">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Settings<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li>@Html.ActionLink("Manage", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>

@@ -13,6 +13,10 @@
 @*<div class="col-md-1">
     @Html.ActionLink("Create New", "Create", "Personas", null, new { @class = "btn btn-primary" })
 </div>*@
+
+<div class="col-md-1 col-md-offset-5">
+    @Html.ActionLink("Create New", "Create", "Personas", null, new { @class = "btn btn-primary" })
+</div>
     
     @using (Html.BeginForm("Index", "Personas", FormMethod.Get))
     {

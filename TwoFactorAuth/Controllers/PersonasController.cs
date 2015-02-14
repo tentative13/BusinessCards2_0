@@ -9,6 +9,9 @@ using System.Web.Mvc;
 using PagedList;
 using EBCardsMVC.Models.Domain;
 using EBCardsMVC.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 
 namespace EBCardsMVC.Controllers
 {
@@ -31,22 +34,19 @@ namespace EBCardsMVC.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            var personas = from p in db.Personas
-                           select p;
+            var userid = User.Identity.GetUserId();
+            var personas = db.Personas.ToList();
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                personas = personas.Where(p => p.LastName.Contains(searchString)
-                                       || p.FirstName.Contains(searchString));
+                personas = personas.Where(p => p.LastName.Contains(searchString) || p.FirstName.Contains(searchString)).ToList();
             }
 
-            personas = personas.OrderBy(p => p.LastName);
+            personas = personas.OrderBy(p => p.LastName).ToList();
 
             //for pages
             int pageSize = 3;
             int pageNumber = (page ?? 1);
-
-            //return View(personas.ToList());
 
             return View(personas.ToPagedList(pageNumber, pageSize));
         }
@@ -54,15 +54,24 @@ namespace EBCardsMVC.Controllers
         // GET: Personas/Details/5
         public ActionResult Details(int? id)
         {
+            Persona persona = new Persona();
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                var userid = User.Identity.GetUserId();
+
+                persona = db.Personas.Where(x => x.User.Id == userid).FirstOrDefault();
+
+                if (persona == null) return HttpNotFound();
             }
-            Persona persona = db.Personas.Find(id);
-            if (persona == null)
+            else
             {
-                return HttpNotFound();
+                //Check authorization here
+                persona = db.Personas.Find(id);
+                if (persona == null) return HttpNotFound();
+                if (persona.User.Id != User.Identity.GetUserId()) return HttpNotFound();
+
             }
+            
             return View(persona);
         }
 
@@ -136,7 +145,7 @@ namespace EBCardsMVC.Controllers
                     db.Entry(personaToUpdate).State = EntityState.Modified;
                     db.SaveChanges();
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Details", "Personas");
                 }
                 catch (DataException /* dex */)
                 {
