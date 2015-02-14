@@ -26,10 +26,14 @@ namespace EBCardsMVC
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
+<<<<<<< HEAD
                       "~/Content/bootstrap-social.css",
-                      "~/Content/validation.css",
                       "~/Content/font-awesome.css",
                       "~/Content/site.css"));
+=======
+                      "~/Content/site.css",
+                      "~/Content/validation.css"));
+>>>>>>> 0901ae25de78a7cd74b4660ffa2a30c79bcea8a8
         }
     }
 }
