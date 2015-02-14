@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using EBCardsMVC.Models;
 
-namespace Domain
+namespace EBCardsMVC.Models.Domain
 {
     public class Persona
     {

@@ -1,4 +1,4 @@
-﻿using Domain;
+﻿
 using EBCardsMVC.Models;
 using System;
 using System.Collections.Generic;
@@ -9,6 +9,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using EBCardsMVC.Models.Domain;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;

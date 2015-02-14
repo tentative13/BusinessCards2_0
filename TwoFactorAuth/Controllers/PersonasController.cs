@@ -1,6 +1,4 @@
-﻿using Domain;
-using EBCardsMVC.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -9,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using EBCardsMVC.Models.Domain;
+using EBCardsMVC.Models;
 
 namespace EBCardsMVC.Controllers
 {

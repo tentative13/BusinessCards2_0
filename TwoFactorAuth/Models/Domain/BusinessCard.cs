@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace Domain
+namespace EBCardsMVC.Models.Domain
 {
     public class BusinessCard
     {
@@ -31,8 +31,6 @@ namespace Domain
 
 
         public virtual ICollection<Address> Address { get; set; }
-        public virtual Persona PersonaOwner { get; set; }
-        public virtual Persona ShareWith { get; set; }
     }
 }
 
