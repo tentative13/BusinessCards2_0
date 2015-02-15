@@ -38,10 +38,8 @@ namespace EBCardsMVC.Controllers
                 var userid = User.Identity.GetUserId();
                 var persona = db.Personas.Where(x => x.User.Id == userid).FirstOrDefault();
 
-                if (persona == null)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                }
+                if (persona == null)return RedirectToAction("Create", "Personas");
+                
                 var shared_cards = db.BusinessCardsTo.Where(x => x.ShareWith.ID == persona.ID).Select(x=>x.BusinessCard.ID).ToList();
                 if(shared_cards.Count==0) return View();
                 

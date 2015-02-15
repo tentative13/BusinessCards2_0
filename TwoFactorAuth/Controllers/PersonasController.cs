@@ -61,14 +61,14 @@ namespace EBCardsMVC.Controllers
 
                 persona = db.Personas.Where(x => x.User.Id == userid).FirstOrDefault();
 
-                if (persona == null) return HttpNotFound();
+                if (persona == null) return RedirectToAction("Create", "Personas");
             }
             else
             {
                 //Check authorization here
                 persona = db.Personas.Find(id);
                 if (persona == null) return HttpNotFound();
-                if (persona.User.Id != User.Identity.GetUserId()) return HttpNotFound();
+                if (persona.User.Id != User.Identity.GetUserId()) return RedirectToAction("Create", "Personas");
 
             }
             
@@ -92,9 +92,11 @@ namespace EBCardsMVC.Controllers
             {
                 persona.Created = DateTime.Now;
                 persona.Changed = DateTime.Now;
+                var userid = User.Identity.GetUserId();
+                persona.User = db.Users.Where(x => x.Id == userid).FirstOrDefault();
                 db.Personas.Add(persona);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details");
             }
 
             return View(persona);

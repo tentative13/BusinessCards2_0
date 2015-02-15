@@ -15,6 +15,7 @@ namespace EBCardsMVC.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -79,6 +80,15 @@ namespace EBCardsMVC.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    var user = await UserManager.FindByEmailAsync(model.Email);
+                    if(user == null) 
+                    {
+                        ModelState.AddModelError("", "Invalid login attempt.");
+                        return View(model);
+                    }
+                    var persona = db.Personas.Where(x => x.User.Id == user.Id).FirstOrDefault();
+                    if (persona == null) return RedirectToAction("Create", "Personas");
+                     
                     return RedirectToAction("Details", "Personas");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
