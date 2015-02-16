@@ -187,3 +187,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+TwoFactorAuth/private.config
+TwoFactorAuth/Web.Debug.config
+TwoFactorAuth/Web.Release.config
