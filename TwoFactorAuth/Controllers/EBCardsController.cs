@@ -41,7 +41,6 @@ namespace EBCardsMVC.Controllers
                 if (persona == null)return RedirectToAction("Create", "Personas");
                 
                 var shared_cards = db.BusinessCardsTo.Where(x => x.ShareWith.ID == persona.ID).Select(x=>x.BusinessCard.ID).ToList();
-                if(shared_cards.Count==0) return View();
                 
                 var businesscards = db.BusinessCards.Where( x=>shared_cards.Contains(x.ID));//.ToList();
                 if (!String.IsNullOrEmpty(searchString))
