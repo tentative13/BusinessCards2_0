@@ -7,13 +7,9 @@
     ViewBag.Title = "Personas";
 }
 <div class="page-header">
-    <h2>Personas</h2>
+    <h2>Find contacts</h2>
 </div>
 
-@*<div class="col-md-1">
-    @Html.ActionLink("Create New", "Create", "Personas", null, new { @class = "btn btn-primary" })
-</div>*@
-    
     @using (Html.BeginForm("Index", "Personas", FormMethod.Get))
     {
         <p>
@@ -68,9 +64,7 @@
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
                 </td>
             </tr>
         }

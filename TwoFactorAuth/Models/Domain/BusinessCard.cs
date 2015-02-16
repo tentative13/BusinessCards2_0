@@ -31,6 +31,7 @@ namespace EBCardsMVC.Models.Domain
 
 
         public virtual ICollection<Address> Address { get; set; }
+        public virtual Persona Persona { get; set; }
     }
 }
 

@@ -35,9 +35,15 @@ namespace EBCardsMVC.Controllers
 
                 ViewBag.CurrentFilter = searchString;
 
-                var businesscards = from b in db.BusinessCards
-                                    select b;
+                var userid = User.Identity.GetUserId();
+                var persona = db.Personas.Where(x => x.User.Id == userid).FirstOrDefault();
 
+                if (persona == null)return RedirectToAction("Create", "Personas");
+                
+                var shared_cards = db.BusinessCardsTo.Where(x => x.ShareWith.ID == persona.ID).Select(x=>x.BusinessCard.ID).ToList();
+                if(shared_cards.Count==0) return View();
+                
+                var businesscards = db.BusinessCards.Where( x=>shared_cards.Contains(x.ID));//.ToList();
                 if (!String.IsNullOrEmpty(searchString))
                 {
                     businesscards = businesscards.Where(b => b.CompanyName.Contains(searchString)
@@ -94,9 +100,11 @@ namespace EBCardsMVC.Controllers
                 {
                     businessCard.Created = DateTime.Now;
                     businessCard.ChangedDate = DateTime.Now;
+                    var userid = User.Identity.GetUserId();
+                    businessCard.Persona = db.Personas.Where(x => x.User.Id == userid).FirstOrDefault();
                     db.BusinessCards.Add(businessCard);
                     db.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Details", "Personas");
                 }
 
                 return View(businessCard);
@@ -136,7 +144,7 @@ namespace EBCardsMVC.Controllers
                         db.Entry(businesscardToUpdate).State = EntityState.Modified;
                         db.SaveChanges();
 
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Details", "Personas");
                     }
                     catch (DataException /* dex */)
                     {
@@ -144,7 +152,7 @@ namespace EBCardsMVC.Controllers
                         ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
                     }
                 }
-                return View(businesscardToUpdate);
+                return RedirectToAction("Details", "Personas");
             }
 
 
@@ -172,7 +180,7 @@ namespace EBCardsMVC.Controllers
                 BusinessCard businessCard = db.BusinessCards.Find(id);
                 db.BusinessCards.Remove(businessCard);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Personas");
             }
 
 

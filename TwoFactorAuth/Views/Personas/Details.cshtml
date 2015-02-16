@@ -4,74 +4,99 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>Persona</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+    <div class="page-header">
+     <h2>Personal info</h2>
+        <div class="col-md-2 col-md-offset-11">
+            @Html.ActionLink("Edit Profile", "Edit", new { id = Model.ID }, new { @style = "line-height:3em" })
+        </div>
+    </div>
+    <div class="row">
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+    <div class="row">
+        <div class="col-md-5">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BirthDate)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.WebSite)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.BirthDate)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.WebSite)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.BirthDate)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.WebSite)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.WebSite)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BusinessCards)
-        </dt>
-        <dd>
-            <table class="table">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="page-header">
+                <h2>My Business Cards</h2>
+
+            </div>
+   </div>
+
+    <div class="row">
+        <div class="bs-docs-section">
+            <div class="col-md-2 col-md-offset-11" style="vertical-align:bottom">
+                @Html.ActionLink("Create New", "Create", "EBCards")
+            </div>
+            <table class="table table-striped table-hover">
                 <tr>
+                    <th>Company Logo</th>
                     <th>Company Name</th>
                     <th>Position</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>WebSite</th>
+                    <th></th>
                 </tr>
                 @foreach (var item in Model.BusinessCards)
                 {
                     <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyLogo)
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.CompanyName)
                         </td>
@@ -84,16 +109,20 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Phone)
                         </td>
-
-
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WebSite)
+                        </td>
+                        <td style="text-align:right">
+                            @Html.ActionLink("Edit", "Edit", "EBCards", new { id = item.ID },null) |
+                            @Html.ActionLink("Details", "Details", "EBCards", new { id = item.ID }, null) |
+                            @Html.ActionLink("Delete", "Delete", "EBCards", new { id = item.ID }, null)
+                        </td>
                     </tr>
                 }
             </table>
-        </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </div>
+    </div>
+    </div>
+
+

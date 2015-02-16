@@ -35,6 +35,7 @@ namespace EBCardsMVC.Models
         public DbSet<Domain.SocialAccounts> SocialAccounts { get; set; }
         public DbSet<Domain.Group> Groups { get; set; }
         public DbSet<Domain.Address> Addresses { get; set; }
+        public DbSet<Domain.BusinessCardsTo> BusinessCardsTo { get; set; }
         
     }
 }
