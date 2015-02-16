@@ -175,6 +175,32 @@ namespace EBCardsMVC.Controllers
                 return RedirectToAction("Index");
             }
 
+
+
+            // GET: BusinessCards/Delete/5
+            public ActionResult Share(int? id)
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                BusinessCard businessCard = db.BusinessCards.Find(id);
+                if (businessCard == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(businessCard);
+            }
+
+            // POST: BusinessCards/Delete/5
+            [HttpPost, ActionName("Share")]
+            [ValidateAntiForgeryToken]
+            public ActionResult ShareConfirmed(int id)
+            {
+                BusinessCard businessCard = db.BusinessCards.Find(id);
+                return RedirectToAction("Index");
+            }
+
             protected override void Dispose(bool disposing)
             {
                 if (disposing)

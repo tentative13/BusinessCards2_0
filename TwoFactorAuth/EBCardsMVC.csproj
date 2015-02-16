@@ -240,6 +240,10 @@
     <Compile Include="Migrations\201502141454466_BCto.Designer.cs">
       <DependentUpon>201502141454466_BCto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502151858345_New.cs" />
+    <Compile Include="Migrations\201502151858345_New.Designer.cs">
+      <DependentUpon>201502151858345_New.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Domain\Address.cs" />
@@ -248,6 +252,7 @@
     <Compile Include="Models\Domain\Contact.cs" />
     <Compile Include="Models\Domain\Group.cs" />
     <Compile Include="Models\Domain\PersonaSocialAccounts.cs" />
+    <Compile Include="Models\HelpModels\ShareBusinessCard.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Domain\Persona.cs" />
@@ -341,6 +346,7 @@
     <Content Include="Views\Personas\Details.cshtml" />
     <Content Include="Views\Personas\Edit.cshtml" />
     <Content Include="Views\Personas\Index.cshtml" />
+    <Content Include="Views\EBCards\Share.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502141454466_BCto.resx">
       <DependentUpon>201502141454466_BCto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502151858345_New.resx">
+      <DependentUpon>201502151858345_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
