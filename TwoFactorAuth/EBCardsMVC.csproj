@@ -240,15 +240,13 @@
     <Compile Include="Migrations\201502141454466_BCto.Designer.cs">
       <DependentUpon>201502141454466_BCto.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Migrations\201502151858345_New.cs" />
     <Compile Include="Migrations\201502151858345_New.Designer.cs">
       <DependentUpon>201502151858345_New.cs</DependentUpon>
-=======
+	  </Compile>
     <Compile Include="Migrations\201502142126571_BCto2.cs" />
     <Compile Include="Migrations\201502142126571_BCto2.Designer.cs">
       <DependentUpon>201502142126571_BCto2.cs</DependentUpon>
->>>>>>> 9a3ca29261b89225e330996e17a9cb609ae722f7
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -352,11 +350,8 @@
     <Content Include="Views\Personas\Details.cshtml" />
     <Content Include="Views\Personas\Edit.cshtml" />
     <Content Include="Views\Personas\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\EBCards\Share.cshtml" />
-=======
     <Content Include="Views\EBCards\Edit.cshtml" />
->>>>>>> 9a3ca29261b89225e330996e17a9cb609ae722f7
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -384,13 +379,11 @@
     <EmbeddedResource Include="Migrations\201502141454466_BCto.resx">
       <DependentUpon>201502141454466_BCto.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201502151858345_New.resx">
       <DependentUpon>201502151858345_New.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502142126571_BCto2.resx">
       <DependentUpon>201502142126571_BCto2.cs</DependentUpon>
->>>>>>> 9a3ca29261b89225e330996e17a9cb609ae722f7
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
