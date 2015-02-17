@@ -243,10 +243,18 @@
     <Compile Include="Migrations\201502151858345_New.cs" />
     <Compile Include="Migrations\201502151858345_New.Designer.cs">
       <DependentUpon>201502151858345_New.cs</DependentUpon>
-	  </Compile>
+    </Compile>
     <Compile Include="Migrations\201502142126571_BCto2.cs" />
     <Compile Include="Migrations\201502142126571_BCto2.Designer.cs">
       <DependentUpon>201502142126571_BCto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502161929307_ТуцMigration.cs" />
+    <Compile Include="Migrations\201502161929307_ТуцMigration.Designer.cs">
+      <DependentUpon>201502161929307_ТуцMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502161930163_MigrateAll.cs" />
+    <Compile Include="Migrations\201502161930163_MigrateAll.Designer.cs">
+      <DependentUpon>201502161930163_MigrateAll.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -384,6 +392,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502142126571_BCto2.resx">
       <DependentUpon>201502142126571_BCto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502161929307_ТуцMigration.resx">
+      <DependentUpon>201502161929307_ТуцMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502161930163_MigrateAll.resx">
+      <DependentUpon>201502161930163_MigrateAll.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
