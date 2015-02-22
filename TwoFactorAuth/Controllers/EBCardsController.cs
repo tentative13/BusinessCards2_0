@@ -52,7 +52,7 @@ namespace EBCardsMVC.Controllers
                 businesscards = businesscards.OrderBy(b => b.CompanyName);
 
                 //for pages
-                int pageSize = 3;
+                int pageSize = 15;
                 int pageNumber = (page ?? 1);
 
                 var userId = User.Identity.GetUserId();
@@ -62,9 +62,6 @@ namespace EBCardsMVC.Controllers
 
                 //return View(db.BusinessCards.ToList());
             }
-
-
-
 
 
             // GET: BusinessCards/Details/5
@@ -81,6 +78,10 @@ namespace EBCardsMVC.Controllers
                 }
                 return View(businessCard);
             }
+
+
+
+
 
             // GET: BusinessCards/Create
             public ActionResult Create()

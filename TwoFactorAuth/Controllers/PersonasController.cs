@@ -45,7 +45,7 @@ namespace EBCardsMVC.Controllers
             personas = personas.OrderBy(p => p.LastName).ToList();
 
             //for pages
-            int pageSize = 3;
+            int pageSize = 15;
             int pageNumber = (page ?? 1);
 
             return View(personas.ToPagedList(pageNumber, pageSize));
@@ -72,6 +72,16 @@ namespace EBCardsMVC.Controllers
 
             }
             
+            return View(persona);
+        }
+
+        // GET: Personas/AddInfo/5
+        public ActionResult AddInfo(int? id)
+        {
+            Persona persona = new Persona();
+            persona = db.Personas.Find(id);
+            if (persona == null) return HttpNotFound();
+
             return View(persona);
         }
 

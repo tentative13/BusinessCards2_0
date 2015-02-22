@@ -69,6 +69,18 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to profile", "Details", "Personas",null,null)
+
+    @if (Model.Persona.User.UserName == User.Identity.Name)
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) @:|
+        @Html.ActionLink("Back to profile", "Details", "Personas", null, null)
+    }
+    else
+    {
+        @Html.ActionLink("Back to list", "Index")
+
+    }
+
+
+
 </p>
