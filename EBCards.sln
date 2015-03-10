@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E41835
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{93A48C85-CA0C-44E6-9EBE-867BC627748F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBC.Data.Tests", "EBC.Data.Tests\EBC.Data.Tests.csproj", "{6CD2DC30-BE24-415D-B6AF-3768404A7179}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBC.Dapper.Data", "EBC.Dapper.Data\EBC.Dapper.Data.csproj", "{F61611C0-B8D1-40C8-807C-E3B4A2236430}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{93A48C85-CA0C-44E6-9EBE-867BC627748F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93A48C85-CA0C-44E6-9EBE-867BC627748F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93A48C85-CA0C-44E6-9EBE-867BC627748F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CD2DC30-BE24-415D-B6AF-3768404A7179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD2DC30-BE24-415D-B6AF-3768404A7179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CD2DC30-BE24-415D-B6AF-3768404A7179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CD2DC30-BE24-415D-B6AF-3768404A7179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F61611C0-B8D1-40C8-807C-E3B4A2236430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F61611C0-B8D1-40C8-807C-E3B4A2236430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F61611C0-B8D1-40C8-807C-E3B4A2236430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F61611C0-B8D1-40C8-807C-E3B4A2236430}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
